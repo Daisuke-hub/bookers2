@@ -1,0 +1,34 @@
+<h1>User info</h1>
+
+<%# <% if @user == current_user.id %>
+
+    <%# <%= attachment_image_tag current_user, :profile_image, :fill, 120, 120, fallback: "no_image.jpg" %>
+    <%# <table class="table tablestriped"> %>
+        <%# <tr> %>
+        <%# <th>Name</th> %>
+        <%# <td><%= current_user.name %>
+        <%# </tr> %>
+
+        <%# <tr> %>
+        <%# <th>introduction</th> %>
+        <%# <td><%= current_user.introduction %>
+        <%# </tr> %>
+    <%# </table> %>
+
+<%# <% else %>
+    <%= attachment_image_tag @user, :profile_image, :fill, 120, 120, fallback: "no_image.jpg"%>
+    <table class="table tablestriped">
+        <tr>
+        <th>Name</th>
+        <td><%= @user.name %></td>
+        </tr>
+
+        <tr>
+        <th>introduction</th>
+        <td><%= @user.introduction %></td>
+        </tr>
+    </table>
+<%# <% end %>
+
+<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench"  %>
+

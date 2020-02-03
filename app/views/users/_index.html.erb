@@ -1,0 +1,19 @@
+<h1>Users</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>image</th>
+        <th>name</th>
+        <th></th>
+
+    </tr>
+
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback:"no_image.jpg", size:"30x30" %></td>
+            <td><%= user.name %></td>
+            <%# <td><%= link_to "Show", "/users/#{user.id}" %>
+            <td><a href="<%= user_path(user.id) %>">Show</a></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,15 @@
+<%= render :partial => "layouts/header"%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <%= render :partial => "users/show" %>
+            <%= render :partial => "books/new" %>
+        </div>
+
+        <div class="col-xs-9">
+            <%= render :partial => "books/index" %>
+        </div>
+    </div>
+    <%= render :partial => "layouts/footer"%>
+</div>

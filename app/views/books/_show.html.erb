@@ -1,0 +1,38 @@
+<h1>Book detail</h1>
+<% if @user == current_user %>
+    <table class="table">
+        <tr>
+            <td>
+                <%= link_to user_path(@user) do %>
+                    <p><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback:"no_image.jpg" %></p>
+                    <%= @user.name %>
+                <% end %>
+            </td>
+            <td>
+                <%= link_to book_path(@book) do %>
+                    <%= @book.title %>
+                <% end %>
+            </td>
+            <td><%= @book.body %></td>
+            <td><a class="btn-sm btn-success" href="<%= edit_book_path %>">Edit</a></td>
+            <td><%= link_to "Destroy",book_path(@book) ,method: :delete,class:'btn btn-danger btn-xs' %></td>
+        </tr>
+    </table>
+<% else %>
+<table class="table tablestriped">
+        <tr>
+            <td>
+            <%= link_to user_path(@user) do %>
+                <p><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback:"no_image.jpg" %></p>
+                <%= @user.name %>
+            <% end %>
+            </td>
+            <td>
+                <%= link_to book_path(@book) do %>
+                <%= @book.title %>
+            <% end %>
+            </td>
+            <td><%= @book.body %></td>
+        </tr>
+    </table>
+<% end %>

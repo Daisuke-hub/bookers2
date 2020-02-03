@@ -1,0 +1,27 @@
+<%= render :partial => "layouts/header"%>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <%= form_for(@book) do |f| %>
+                <% if @book.errors.any? %>
+                    <h3 style="color: red;"><%= @book.errors.count %> error prohibited this obj from being saved:</h3>
+                    <ul><% @book.errors.full_messages.each do |message| %></ul>
+                        <li style="color: red"><%= message %></li>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <%= render :partial => "users/show" %>
+            <%= render :partial => "books/new" %>
+        </div>
+
+        <div class="col-xs-9">
+            <%= render :partial => "books/index" %>
+        </div>
+    </div>
+    <%= render :partial => "layouts/footer"%>
+</div>
